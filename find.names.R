@@ -10,6 +10,7 @@ taxonomy_df  <- as.data.frame(taxonomy)
 #### the function to find the gn names in taxonomy ####
 find.names <- function(gn, taxonomy_df){
   sp_names_matched <- as.data.frame(matrix(nrow=0, ncol=4))
+  colnames(sp_names_matched) <- c("gn_name", "tax_name", "tax_row", "tax_col")
   i <- 1
   for(sp_name in seq_along(gn$Sp_names)){
     found <- 0
